@@ -21,7 +21,7 @@ SELECT * FROM "packages" WHERE "from_address_id" IS NULL;
 
     -- Check For address and type of the end address
 SELECT "address", "type" FROM "addresses" WHERE "id" = (
-    SELECT "to_address_id" FROM "packages" WHERE "from_address_id" IS NULL
+    SELECT "to_address_id" FROM "packages" WHERE "from_address_id" IS NULL 
 ); 
 -- 123 Sesame Street|Residential
 
