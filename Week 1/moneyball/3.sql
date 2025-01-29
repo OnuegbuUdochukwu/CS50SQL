@@ -9,4 +9,5 @@ SELECT "year", "HR" FROM (
     SELECT * FROM "performances"
     JOIN "players" ON "players"."id" = "performances"."player_id"
 )
-WHERE "first_name" = "Ken" AND "birth_year" = 1969 AND "HR" > 0;
+WHERE "first_name" = "Ken" AND "birth_year" = 1969 AND "HR" > 0
+ORDER BY "year" DESC;

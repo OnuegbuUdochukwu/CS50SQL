@@ -1,4 +1,4 @@
--- write a SQL query to fi nd the 5 lowest paying teams (by average salary) in 2001.
+-- write a SQL query to find the 5 lowest paying teams (by average salary) in 2001.
 
 -- Round the average salary column to two decimal places and call it “average salary”. 
 -- Sort the teams by average salary, least to greatest. 

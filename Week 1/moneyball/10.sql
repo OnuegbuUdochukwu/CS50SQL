@@ -30,12 +30,12 @@ SELECT "first_name", "last_name", "salary", "HR", "year" FROM (
     SELECT * FROM "players"
     JOIN "salaries" ON "salaries"."player_id" = "players"."id"
     JOIN "performances" ON "performances"."player_id" = "players"."id"
+    WHERE "performances"."year" = "salaries"."year"
 )
-EXCEPT
-SELECT "first_name", "last_name", "salary", "HR", "year" FROM (
-    SELECT * FROM "players"
-    JOIN "salaries" ON "salaries"."player_id" = "players"."id"
-    JOIN "performances" ON "performances"."player_id" = "players"."id"
-) 
-WHERE "HR" = 0
+-- EXCEPT
+-- SELECT "first_name", "last_name", "salary", "HR", "year" FROM (
+--     SELECT * FROM "players"
+--     JOIN "salaries" ON "salaries"."player_id" = "players"."id"
+--     JOIN "performances" ON "performances"."player_id" = "players"."id"
+-- ) 
 ORDER BY "first_name", "last_name", "year" DESC, "HR" DESC, "salary" DESC;
