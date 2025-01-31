@@ -7,17 +7,25 @@
         -- one for the teams’ names and 
         -- one for their total hits in 2001.
 
-SELECT "name", SUM("H") AS "total hits" FROM (
-    SELECT * FROM "teams"
-    JOIN "performances" ON "performances"."team_id" = "teams"."id"
-)
-WHERE "year" = 2001 
+-- SELECT "name", SUM("H") AS "total hits" FROM (
+--     SELECT * FROM "teams"
+--     JOIN "performances" ON "performances"."team_id" = "teams"."id"
+-- )
+-- WHERE "year" = 2001 
+-- GROUP BY "name"
+-- ORDER BY "total hits" DESC
+-- LIMIT 5;
+
+SELECT "name", SUM("H") AS "total hits" FROM "teams"
+JOIN "performances" ON "performances"."team_id" = "teams"."id"
+WHERE "performances"."year" = 2001 
 GROUP BY "name"
 ORDER BY "total hits" DESC
 LIMIT 5;
 
 
-SELECT "team_id", ("H"),"year" FROM "performances"
-WHERE "year" = 2001
--- GROUP BY "team_id"
-ORDER BY "H";
+-- SELECT "team_id", ("H"),"year" FROM "performances"
+-- WHERE "year" = 2001
+-- -- GROUP BY "team_id"
+-- ORDER BY "H";
+

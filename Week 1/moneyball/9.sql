@@ -6,11 +6,9 @@
         -- one for the teams’ names and 
         -- one for their average salary.
 
-SELECT "name", ROUND(AVG("salary"), 2) AS "average salary" FROM (
-    SELECT * FROM "teams" 
-    JOIN "salaries" ON "salaries"."team_id" = "teams"."id"
-)
-WHERE "year" = 2001
+SELECT "name", ROUND(AVG("salary"), 2) AS "average salary" FROM "teams" 
+JOIN "salaries" ON "salaries"."team_id" = "teams"."id"
+WHERE "salaries"."year" = 2001
 GROUP BY "name"
-ORDER BY "average salary" DESC
+ORDER BY "average salary" 
 LIMIT 5;
