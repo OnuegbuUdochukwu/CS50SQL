@@ -6,14 +6,14 @@ CREATE TABLE "riders" (
 
 CREATE TABLE "stations" (
     "id" INTEGER,
-    "name" TEXT,
-    "line" TEXT,
+    "name" TEXT NOT NULL UNIQUE,
+    "line" TEXT NOT NULL,
     PRIMARY KEY ("id")
 );
 
 CREATE TABLE "visits" (
+    "id" INTEGER,
     "rider_id" INTEGER,
     "station_id" INTEGER,
-    FOREIGN KEY("rider_id") REFERENCES "riders"("id")
-    FOREIGN KEY("station_id") REFERENCES "stations"("id")
+    PRIMARY KEY("id")
 );
