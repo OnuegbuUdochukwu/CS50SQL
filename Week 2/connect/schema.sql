@@ -3,11 +3,11 @@ CREATE TABLE "users" (
     "first_name" TEXT NOT NULL,
     "last_name" TEXT NOT NULL,
     "password" NUMERIC NOT NULL UNIQUE,
-    PRIMARY KEY ("id"),
+    PRIMARY KEY ("id")
 );
 
 CREATE TABLE "schools" (
-    "id" INTEGER PRIMARY KEY,
+    "id" INTEGE,
     "name" TEXT NOT NULL,
     "type" TEXT NOT NULL,
     "location" TEXT NOT NULL,
